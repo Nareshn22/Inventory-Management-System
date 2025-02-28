@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+  <div class="left-container"></div>
+  <div class="right-container">
+    <div class="right-container__box">
+      <h2 class="right-container__h2">Nice to see you!</h2>
+      <p class="right-container__p">Enter your email and password to sign in</p>
+      <div class="input-container">
+        <form [formGroup]="form"  (submit)="onSubmit()">
+        <input type="email" class="right-container__input" name="email" formControlName="email" placeholder="Your email address">
+        <small style="color: red;" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+          Email is required.
+        </small>
+        <input type="password" class="right-container__input" name="password" formControlName="password" placeholder="Your password"> 
+        <small style="color: red;" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+          Password is required.
+        </small>
+        <button type="submit" class="btn">LOGIN</button>
+      </form>
+      </div> 
+      <p class="right-container__bottom-text">Don't have an account? <strong routerLink="/signup">Sign Up</strong></p>
+    </div>
+  </div>
+</body>
+</html>
+

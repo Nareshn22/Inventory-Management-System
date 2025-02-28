@@ -1,0 +1,12 @@
+<ng-container *ngIf="showSidebar()">
+    <app-leftsidebar 
+      [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" 
+      (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)"
+    ></app-leftsidebar>
+  </ng-container>
+  
+  <app-main
+    [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" 
+    [screenWidth]="screenWidth()"
+  ></app-main>
+  

@@ -1,0 +1,207 @@
+.header-container {
+    margin-left: 30px; /* Adjust the margin size as needed */
+    margin-top: 30px;
+  }
+  
+  .header-title {
+    font-weight: bold;
+    color: #333; /* Change to your preferred color */
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  
+  .header-underline {
+    width: calc(100% - 30px); /* Ensures the underline starts after the left margin */
+    height: 4px; /* Thickness of the underline */
+    background:linear-gradient(90deg,rgb(35, 5, 143),rgb(25, 6, 131),rgb(3, 9, 84));
+    margin-top: 10px; /* Adjust spacing between title and underline */
+  }
+
+  .leBlurIn {
+    animation: leBlurIn 0.5s ease-out;
+  }
+  
+  @keyframes leBlurIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .tabs {
+    margin-top: 20px;
+    width: calc(100% - 60px);
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    margin-left: 30px; /* Adjust the margin size as needed */
+    margin-right: 30px;
+  }
+  
+  .tab-button {
+    width: calc(100% - 30px);
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab-button:hover {
+    background-color: #e2e6ea;
+  }
+  
+  .tab-button.active {
+    background-color: #d8e2fa;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    margin-top: 20px;
+  }
+
+  /* Form Styling */
+/* Form Styling */
+/* Tab Content Styling */
+/* Tab Content Styling */
+.tab-contents {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Form Container */
+.form-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%; /* Ensure the form stays on the left half */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+form input {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input.readonly-field {
+  background-color: #f5f5f5;
+  color: #777;
+  cursor: not-allowed;
+  border: 1px solid #e0e0e0;
+}
+
+form button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #003d80;
+  transform: translateY(-2px);
+}
+
+form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Image Container */
+.image-container {
+  flex: 1; /* Take the remaining half of the div */
+  border-radius: 0 8px 8px 0; /* Soft corners on the right side */
+  position: relative; /* Ensure it works with the image positioning */
+  overflow: hidden; /* Hide any overflow */
+}
+.image-container img {
+  width: 100%; /* Ensure the image takes full width of the container */
+  height: 100%; /* Make the image cover the full height of the container */
+  object-fit: cover; /* This will crop and scale the image to cover the container */
+  object-position: center; 
+  /* Center the image inside the container */
+}
+
+.transactions-table {
+  width: calc(100% - 60px); /* Adjust width for left and right margins */
+  margin: 0 30px; /* Add 30px margin on left and right */
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.transactions-table th, 
+.transactions-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Lighter borders */
+  text-align: left;
+}
+
+.transactions-table th {
+  background: #4a90e2; /* Light blue background */
+  color: #ffffff; /* Slightly darker blue text */
+  font-weight: 600;
+}
+
+.transactions-table tr:last-child td {
+  border-bottom: none; /* Remove last row border */
+}
+
+.transactions-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.03); /* Subtle hover effect */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .transactions-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
+

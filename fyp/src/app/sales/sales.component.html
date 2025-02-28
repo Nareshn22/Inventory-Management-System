@@ -1,0 +1,120 @@
+<html>
+<body class="leBlurIn">
+<div >
+<div class="header-container">
+    <div class="header-title">
+      <h1>Sales and Transactions</h1>
+      <div class="header-underline"></div>
+</div>
+</div>
+</div>
+
+<div class="tabs">
+  <button 
+    class="tab-button" 
+    [class.active]="currentTab === 'sell'" 
+    (click)="setTab('sell')">Sell Item</button>
+  <button 
+    class="tab-button" 
+    [class.active]="currentTab === 'trans'" 
+    (click)="setTab('trans')">Recent Transactions</button>
+</div>
+
+    <div *ngIf="currentTab==='sell'" class="tab-content leBlurIn">
+      <div class="tab-contents">
+        <div class="form-container">
+          <form [formGroup]="sellForm" (ngSubmit)="sellItem()">
+            <!-- Item Dropdown -->
+            <label for="item">Select Item</label>
+            <input 
+              id="item" 
+              type="text" 
+              formControlName="item" 
+              placeholder="Search items..." 
+              (input)="filterItems($event)" 
+              list="itemsList"
+            />
+            <datalist id="itemsList">
+              <option *ngFor="let item of filteredItems" [value]="item.name">
+                {{ item.name }}
+              </option>
+            </datalist>
+      
+            <!-- Available Quantity -->
+            <label for="availableQuantity">Available Quantity</label>
+            <input
+              id="availableQuantity"
+              type="number"
+              formControlName="availableQuantity"
+              readonly
+              class="readonly-field"
+            />
+      
+            <!-- Price per Unit -->
+            <label for="pricePerUnit">Price per Unit</label>
+            <input
+              id="pricePerUnit"
+              type="number"
+              formControlName="pricePerUnit"
+              readonly
+              class="readonly-field"
+            />
+      
+            <!-- Quantity -->
+            <label for="quantity">Quantity to Sell</label>
+            <input
+              id="quantity"
+              type="number"
+              formControlName="quantity"
+              placeholder="Enter quantity"
+            />
+      
+            <!-- Customer Name -->
+            <label for="customerName">Customer Name</label>
+            <input
+              id="customerName"
+              type="text"
+              formControlName="customerName"
+              placeholder="Enter buyer name"
+            />
+      
+            <!-- Submit Button -->
+            <button type="submit">Sell Item</button>
+          </form>
+        </div>
+        <div class="image-container">
+          <img src="assets/images/Marketing-amico.png" alt="">
+        </div>
+      </div>
+    </div>
+      <div *ngIf="currentTab==='trans'" >
+      <div  class="transactions-container">
+      
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>Customer Name</th>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Price Per Unit (₹)</th>
+              <th>Total Price (₹)</th>
+              <th>Date of Purchase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transaction of transactions">
+              <td>{{ transaction.customer_name }}</td>
+              <td>{{ transaction.item_name }}</td>
+              <td>{{ transaction.quantity }}</td>
+              <td>{{ transaction.price}}</td>
+              <td>{{ transaction.total }}</td>
+              <td>{{ transaction.transaction_date | date:'dd MMM yyyy, hh:mm a' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+      
+      
+</body>
+</html>

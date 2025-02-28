@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add items</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container leBlurIn">
+  <div class="header-container">
+  <div class="header-title">
+    <h1>Inventory</h1>
+    <div class="header-underline"></div>
+  </div>
+  </div>
+  <div class="user-message">
+    <p>
+      <i class="fas fa-info-circle"></i>
+      Click on the column headers to sort the table accordingly.</p>
+  </div>
+
+  <div class="table-container">
+  <table *ngIf="display">
+    <thead>
+      <tr>
+        <!-- Bind sort function to each header -->
+        <th (click)="sort('name')">
+          Item Name
+          <i *ngIf="sortColumn === 'name'" class="fas" [ngClass]="{'fa-sort-up': sortDirection === 'asc', 'fa-sort-down': sortDirection === 'desc'}"></i>
+          <i *ngIf="sortColumn !== 'name'" class="fas fa-sort"></i>
+        </th>
+        <th>Description</th>
+        <th (click)="sort('quantity')">
+          Quantity
+          <i *ngIf="sortColumn === 'quantity'" class="fas" [ngClass]="{'fa-sort-up': sortDirection === 'asc', 'fa-sort-down': sortDirection === 'desc'}"></i>
+          <i *ngIf="sortColumn !== 'quantity'" class="fas fa-sort"></i>
+        </th>
+        <th (click)="sort('price')">
+          Price per Unit
+          <i *ngIf="sortColumn === 'price'" class="fas" [ngClass]="{'fa-sort-up': sortDirection === 'asc', 'fa-sort-down': sortDirection === 'desc'}"></i>
+          <i *ngIf="sortColumn !== 'price'" class="fas fa-sort"></i>
+        </th>
+        <th (click)="sort('revenue')">
+          Revenue
+          <i *ngIf="sortColumn === 'revenue'" class="fas" [ngClass]="{'fa-sort-up': sortDirection === 'asc', 'fa-sort-down': sortDirection === 'desc'}"></i>
+          <i *ngIf="sortColumn !== 'revenue'" class="fas fa-sort"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.revenue }}</td>
+
+      </tr>
+    </tbody>
+  </table>  
+</div>
+</div>  
+</body>
+</html>
+
+
+
+

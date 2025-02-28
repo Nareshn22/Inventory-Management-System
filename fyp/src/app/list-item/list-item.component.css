@@ -1,0 +1,144 @@
+.leBlurIn {
+  animation: leBlurIn 0.5s ease-out;
+}
+
+@keyframes leBlurIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.header-container {
+  margin-left: 30px; 
+  margin-top: 30px;
+}
+
+.header-title {
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+h1{
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.header-underline {
+  width: calc(100% - 30px); 
+  height: 4px; 
+  background:linear-gradient(90deg,rgb(35, 5, 143),rgb(25, 6, 131),rgb(3, 9, 84));
+  margin-top: 10px; 
+}
+.table-container {
+  margin: 0 30px;
+}
+table {
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  table thead {
+    background-color: #4a90e2 !important; 
+    color: white;
+  }
+  
+  table thead th {
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  
+  tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  tbody tr:hover {
+    background-color: #e3f2fd;
+  }
+  
+  td {
+    padding: 12px 15px;
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+  }
+  
+  th:nth-child(1), td:nth-child(1) {
+    width: 20%;
+  }
+  th:nth-child(2), td:nth-child(2) {
+    width: 30%;
+  }
+  th:nth-child(3), td:nth-child(3) {
+    width: 10%;
+  }
+  th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+  }
+  th:nth-child(5), td:nth-child(5) {
+    width: 15%;
+  }
+  th:nth-child(6), td:nth-child(6) {
+    width: 10%;
+  }
+
+  
+.no-data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  position: relative;
+}
+
+.no-data-message {
+  text-align: center;
+  opacity: 0.95;
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.no-data-image {
+  max-width: 650px; 
+  width: 350px;
+  height: 400px;
+  margin-bottom: 15px;
+}
+
+.no-data-message p {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #555;
+} 
+
+.user-message {
+  margin-bottom: 16px; /* Add some space below the message */
+  font-size: 14px; /* Adjust font size */
+  color: #555; /* Use a subtle color */
+  font-style: italic; /* Make it italic for emphasis */
+  text-align: center; /* Center-align the text */
+  margin-top: 20px;
+}
+

@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 500px; /* Ensure a fixed width */
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  canvas {
+    width: 100% !important; /* Ensures proper scaling */
+    height: auto !important;
+    display: block;
+  }
+  
+  

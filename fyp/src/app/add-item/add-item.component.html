@@ -1,0 +1,47 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form-container">
+    <h3 class="form-title">
+        <i class="fas fa-box"></i>
+        <span> Add New Item</span></h3>
+
+    <div class="form-field">
+        <label for="name" class="form-label">Item Name:</label>
+        <input id="name" formControlName="name" type="text" required class="form-input" placeholder="Enter item name" />
+    </div>
+
+    <div class="form-field">
+        <label for="description" class="form-label">Description:</label>
+        <textarea id="description" formControlName="description" class="form-textarea" placeholder="Describe the item"></textarea>
+    </div>
+
+    <div class="form-field">
+        <label for="category" class="form-label">Category:</label>
+        <select id="category" formControlName="category" class="form-select">
+            <option value="" disabled>Select Category</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+    </div>
+
+    <div class="form-field">
+        <label for="supplier" class="form-label">Supplier:</label>
+        <select id="supplier" formControlName="supplier" class="form-select">
+            <option value="" disabled>Select Supplier</option>
+            <option *ngFor="let supplier of suppliers" [value]="supplier.id">{{ supplier.name }}</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <div class="form-field">
+            <label for="quantity" class="form-label">Quantity:</label>
+            <input id="quantity" formControlName="quantity" type="number" required class="form-input" placeholder="Enter quantity" />
+        </div>
+
+        <div class="form-field">
+            <label for="price" class="form-label">Price per Unit:</label>
+            <input id="price" formControlName="price" type="number" required class="form-input" placeholder="Enter price per unit" />
+        </div>
+    </div>
+
+    <button type="submit" class="form-button">
+        <i class="fas fa-plus"></i>
+        Add Item</button>
+</form>

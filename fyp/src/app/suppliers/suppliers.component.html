@@ -1,0 +1,115 @@
+<!--<div class="category-list">
+  <h2>Categories</h2>  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Address</th>
+        <th>Phone number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vendor of suppliers">
+        <td>{{ vendor.name }}</td>
+        <td>{{ vendor.company_name }}</td>
+        <td>{{ vendor.address}}</td>
+        <td>{{ vendor.phn_no}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="toggleAddSupplierForm()">Add New Supplier</button>
+  <div *ngIf="showAddSupplierForm" class="add-category-form">
+    <h3>Add New Category</h3>
+    <form (ngSubmit)="addSupplier()" [formGroup]="supplier_form">
+      <label for="name">Supplier Name</label>
+      <input id="name" formControlName="supplier_name" name="name" required />
+
+      <label for="company">Company Name </label>
+      <input  formControlName="company_name" name="name" required />
+
+      <label for="email">Email</label>
+      <input  formControlName="email" name="email" required />
+
+      <label for="Phone Number">Phone Number</label>
+      <input type="number" formControlName="phone_number" required />
+
+      <label for="address">Address</label>
+      <textarea id="description" formControlName="address" name="description" required></textarea>
+
+
+
+      <button type="submit">Add Supplier</button>
+    </form>
+  </div>
+</div>
+-->
+<div class="leBlurIn">
+<div class="header-container">
+  <div class="header-title">
+    <h1>Supplier and Vendors</h1>
+    <div class="header-underline"></div>
+  </div>
+  </div>
+<div class="supplier-container">
+  
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button 
+      class="tab-button" 
+      [class.active]="currentTab === 'list'" 
+      (click)="setTab('list')">Supplier List</button>
+    <button 
+      class="tab-button" 
+      [class.active]="currentTab === 'add'" 
+      (click)="setTab('add')">Add Supplier</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div *ngIf="currentTab === 'list'" class="tab-content leBlurIn">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Company</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vendor of suppliers">
+          <td>{{ vendor.name }}</td>
+          <td>{{ vendor.company_name }}</td>
+          <td>{{ vendor.address }}</td>
+          <td>{{ vendor.phn_no }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="currentTab === 'add'" class="tab-content leBlurIn">
+    <h3>Add New Supplier</h3>
+    <form (ngSubmit)="addSupplier()" [formGroup]="supplier_form">
+      <label for="name">Supplier Name</label>
+      <input id="name" formControlName="name" name="name" required />
+
+      <label for="company">Company Name</label>
+      <input formControlName="company_name" name="company_name" required />
+
+      <label for="email">Email</label>
+      <input formControlName="email" name="email" type="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" formControlName="phn_no" type="number" required />
+
+      <label for="address">Address</label>
+      <textarea id="address" formControlName="address" name="address" required></textarea>
+
+      <button type="submit">Add Supplier</button>
+    </form>
+  </div>
+</div>
+</div>
+
+

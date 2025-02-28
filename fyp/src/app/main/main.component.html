@@ -1,0 +1,10 @@
+<div
+  class="body"
+  [ngClass]="{
+    'body-trimmed': !isAuthPage() && !isLeftSidebarCollapsed(),
+    'body-md-screen': !isAuthPage() && isLeftSidebarCollapsed(),
+    'body-full-width': isAuthPage()
+  }"
+>
+  <router-outlet></router-outlet>
+</div>

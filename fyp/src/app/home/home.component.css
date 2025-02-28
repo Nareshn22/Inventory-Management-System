@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+
+
+body {
+    background: rgb(255, 255, 255);
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+.leBlurIn {
+  animation: leBlurIn 0.5s ease-out;
+}
+
+@keyframes leBlurIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.container {
+    height: 100vh;
+    color:rgb(0, 0, 0);
+    position: relative;
+    z-index: 2; 
+    background: #ffffff;
+    border-radius: 0; 
+    box-shadow: none; 
+    padding: 2rem; 
+    text-align: center;
+    width: 100%; 
+    max-width: 100%;
+    margin: 0;
+    animation: leBlurIn 1s ease-out;
+}
+
+
+.header-title {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+.account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 300px;
+    height: 100px;
+    margin: 10px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .account-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .account-info .material-icons {
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+.underline {
+    width: 100%;
+    height: 4px; 
+    background:linear-gradient(90deg,rgb(35, 5, 143),rgb(25, 6, 131),rgb(3, 9, 84));
+    margin: 0.5rem 0 1.5rem 0; 
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: #060000;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-size: 25px;
+}
+
+.features {
+    list-style-type:disc; 
+    margin-left: 1.5rem; 
+    text-align: left; 
+}
+
+.features li {
+    font-size: larger;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: leBlurin 0.8s ease forwards;
+
+}
+
+.features li:nth-child(1) { animation-delay: 0.3s; }
+.features li:nth-child(2) { animation-delay: 0.5s; }
+.features li:nth-child(3) { animation-delay: 0.7s; }
+.features li:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+h1{
+    font-family: "Rubik",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: roman;
+    text-align: center;
+  }
+h2{
+  font-family: "Rubik",sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: roman;
+  text-align: left;
+}
+
+.home-container {
+    text-align: center;
+    margin: 2rem auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .home-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .home-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; 
+    justify-items: center;
+    padding: 2rem;
+  }
+ 
+  
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-content {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .card-content img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-style: bold;
+    font-weight: 500;
+  }
+  .card-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  .card-button {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .card-button:hover {
+    background: #0056b3;
+  }
+  
